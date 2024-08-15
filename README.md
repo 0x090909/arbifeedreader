@@ -7,7 +7,7 @@ ArbitrumFeedReader is a Go library that allows you to subscribe to and parse tra
 To install ArbitrumFeedReader, use `go get`:
 
 ```
-go get github.com/yourusername/arbitrumfeedreader
+go get github.com/0x090909/arbitrumfeedreader
 ```
 
 ## Usage
@@ -18,7 +18,7 @@ Here's a basic example of how to use ArbitrumFeedReader:
 package main
 
 import (
-    "github.com/yourusername/arbitrumfeedreader"
+    "github.com/0x090909/arbitrumfeedreader"
     "github.com/sirupsen/logrus"
 )
 
