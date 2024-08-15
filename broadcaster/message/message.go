@@ -1,7 +1,7 @@
 package message
 
 import (
-	"arbifeedreader/arbos/arbostypes"
+	"github.com/0x090909/arbifeedreader/arbos/arbostypes"
 	"github.com/ethereum/go-ethereum/common"
 )
 

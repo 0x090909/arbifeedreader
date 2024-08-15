@@ -1,8 +1,8 @@
 package main
 
 import (
-	"arbifeedreader/arbitrumtypes"
-	"arbifeedreader/feedreader"
+	"github.com/0x090909/arbifeedreader/arbitrumtypes"
+	"github.com/0x090909/arbifeedreader/feedreader"
 	log "github.com/sirupsen/logrus"
 )
 

@@ -4,15 +4,15 @@
 package util
 
 import (
-	"arbifeedreader/arbos/util/arbmath"
 	"encoding/binary"
 	"errors"
 	"fmt"
+	"github.com/0x090909/arbifeedreader/arbos/util/arbmath"
 	"io"
 	"math/big"
 	"strings"
 
-	types "arbifeedreader/arbitrumtypes"
+	types "github.com/0x090909/arbifeedreader/arbitrumtypes"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"
 )

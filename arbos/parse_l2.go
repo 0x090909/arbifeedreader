@@ -1,13 +1,13 @@
 package arbos
 
 import (
-	"arbifeedreader/arbitrumtypes"
-	"arbifeedreader/arbos/arbostypes"
-	"arbifeedreader/arbos/util"
-	"arbifeedreader/arbos/util/arbmath"
 	"bytes"
 	"errors"
 	"fmt"
+	"github.com/0x090909/arbifeedreader/arbitrumtypes"
+	"github.com/0x090909/arbifeedreader/arbos/arbostypes"
+	"github.com/0x090909/arbifeedreader/arbos/util"
+	"github.com/0x090909/arbifeedreader/arbos/util/arbmath"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
