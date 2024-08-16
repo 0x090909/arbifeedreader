@@ -18,7 +18,8 @@ Here's a basic example of how to use ArbitrumFeedReader:
 package main
 
 import (
-    "github.com/0x090909/arbifeedreader"
+	"github.com/0x090909/arbifeedreader/arbitrumtypes"
+	"github.com/0x090909/arbifeedreader/feedreader"
     "github.com/sirupsen/logrus"
 )
 
