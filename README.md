@@ -20,7 +20,7 @@ package main
 import (
 	"github.com/0x090909/arbifeedreader/arbitrumtypes"
 	"github.com/0x090909/arbifeedreader/feedreader"
-    "github.com/sirupsen/logrus"
+	"github.com/sirupsen/logrus"
 )
 
 func main() {
