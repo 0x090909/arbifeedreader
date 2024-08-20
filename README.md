@@ -7,7 +7,7 @@ ArbitrumFeedReader is a Go library that allows you to subscribe to and parse tra
 To install ArbitrumFeedReader, use `go get`:
 
 ```
-go get github.com/0x090909/arbitrumfeedreader
+go get github.com/0x090909/arbifeedreader
 ```
 
 ## Usage
@@ -18,12 +18,13 @@ Here's a basic example of how to use ArbitrumFeedReader:
 package main
 
 import (
-    "github.com/0x090909/arbitrumfeedreader"
-    "github.com/sirupsen/logrus"
+	"github.com/0x090909/arbifeedreader/arbitrumtypes"
+	"github.com/0x090909/arbifeedreader/feedreader"
+	"github.com/sirupsen/logrus"
 )
 
 func main() {
-    f := feedreader.NewFeedReader()
+    f := arbifeedreader.NewFeedReader()
     f.Run(func(tx *arbitrumtypes.Transaction) {
         logrus.WithFields(logrus.Fields{"Hash": tx.Hash()}).Info("New Transaction!")
         logrus.WithFields(logrus.Fields{"To": tx.To()}).Info("New Transaction!")
