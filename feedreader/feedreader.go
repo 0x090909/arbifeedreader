@@ -53,8 +53,7 @@ func (f *FeedReader) Run(callback func(transaction *arbitrumtypes.Transaction)) 
 			if m.Message.Message != nil {
 				txes, errorParse := arbos.ParseL2Transactions(m.Message.Message, big.NewInt(42161))
 				if errorParse != nil {
-					log.Println("Error parsing txes:", errorParse)
-
+					continue
 				}
 				if len(txes) > 0 {
 					for _, tx := range txes {
