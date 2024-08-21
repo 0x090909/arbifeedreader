@@ -8,6 +8,7 @@ import (
 	"github.com/gorilla/websocket"
 	log "github.com/sirupsen/logrus"
 	"math/big"
+	"time"
 )
 
 type FeedReader struct {
@@ -37,7 +38,18 @@ func (f *FeedReader) Run(callback func(transaction *arbitrumtypes.Transaction)) 
 		_, messageWSS, err := conn.ReadMessage()
 		if err != nil {
 			log.Println("Error reading message:", err)
-			return
+			for {
+				log.Info("Retrying in 5 seconds...")
+				time.Sleep(time.Second * 5)
+				conn, _, err = websocket.DefaultDialer.Dial(f.endpoint, nil)
+				if err != nil {
+					log.WithField("error", err).Error("Error reconnecting to WebSocket server:")
+				} else {
+					log.Info("Reconnected to WebSocket server")
+					//skip error message
+					continue
+				}
+			}
 		}
 
 		// Decode the JSON message into a BroadcastMessage struct
