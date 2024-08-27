@@ -22,7 +22,10 @@ func NewFeedReader() *FeedReader {
 func (f *FeedReader) Run(callback func(transaction *arbitrumtypes.Transaction)) {
 
 	// Connect to the WebSocket server
-	conn, _, err := websocket.DefaultDialer.Dial(f.endpoint, nil)
+	var conn *websocket.Conn
+	var err error
+	var messageWSS []byte
+	conn, _, err = websocket.DefaultDialer.Dial(f.endpoint, nil)
 	if err != nil {
 		log.Fatal("Error connecting to WebSocket server:", err)
 	}
@@ -35,7 +38,7 @@ func (f *FeedReader) Run(callback func(transaction *arbitrumtypes.Transaction)) 
 
 	for {
 		// Read message from the WebSocket
-		_, messageWSS, err := conn.ReadMessage()
+		_, messageWSS, err = conn.ReadMessage()
 		if err != nil {
 			log.Println("Error reading message:", err)
 			for {
@@ -47,7 +50,7 @@ func (f *FeedReader) Run(callback func(transaction *arbitrumtypes.Transaction)) 
 				} else {
 					log.Info("Reconnected to WebSocket server")
 					//skip error message
-					continue
+					break
 				}
 			}
 		}
